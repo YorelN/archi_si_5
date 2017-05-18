@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    {% block css %}{% endblock %}
+    <title>{%  block title %}{% endblock title %}</title>
+</head>
+<body>
+<header class="clearfix">
+    <div id="content-logo">
+        <h1>
+            <a href="index.html.twig">
+                <img src="../img-layout/logo.png" alt="">
+            </a>
+        </h1>
+        <div class="burger">
+            <img src="../img-layout/burger.png" alt="">
+        </div>
+        <nav class="burger-menu">
+            <ul class="closed">
+                <li><a href="revues.html.twig">Revues</a></li>
+                <li><a href="actu.html.twig">Actualités</a></li>
+                <li><a href="a-propos.html.twig">À propos</a></li>
+                <li><a href="#">S'ABONNER</a></li>
+                <li><a href="#">Mon compte</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="none">
+        <nav>
+            <ul>
+                <li><a href="#"><img src="../img-layout/picto_compte.png" class="picto-nav" alt=""></a></li>
+                <li><a href="#"><img src="../img-layout/picto_panier.png" class="picto-nav" alt=""></a></li>
+                <li><a href="#"><img src="../img-layout/picto_search.png" class="picto-nav" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="none">
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Revues</a></li>
+                <li><a href="#">Actualités</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#"><span class="upper">S'abonner</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+{% block body %}{%  endblock body %}
+
+
+<footer class="clearfix ">
+    <div>
+        <h4>Appel d'offre</h4>
+        <div class="liseret"></div>
+        <p>Découvrez notre partenaire<br>DoubleTrade <a href="#">ici</a></p>
+    </div>
+    <div>
+        <h4>Contactez-nous</h4>
+        <div class="liseret"></div>
+        <p>Vous souhaitez nous contacter ?<br>Rien de plus simple, cliquez <a href="#">ici</a></p>
+    </div>
+    <div>
+        <h4>Suivez-nous</h4>
+        <div class="liseret"></div>
+        <ul>
+            <li><a href="#"><img src="../assets/images/img-layout/fb.png"></a></li>
+            <li><a href="#"><img src="../assets/images/img-layout/insta.png"></a></li>
+            <li><a href="#"><img src="../assets/images/img-layout/pinterest.png"></a></li>
+            <li><a href="#"><img src="../assets/images/img-layout/twitter.png"></a></li>
+        </ul>
+    </div>
+    <div class="bas-de-page">
+        <div>
+            <h5 class="archi"><a href="#">L'Architecture</a></h5>
+        </div>
+        <div>
+            <h5 class="legales"><a href="inde">Mentions légales</a></h5>
+        </div>
+    </div>
+</footer>
+{% block javascript %}{% endblock %}
+</body>
+</html>

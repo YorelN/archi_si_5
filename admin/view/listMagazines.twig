@@ -1,0 +1,36 @@
+{% extends "Layout.twig" %}
+
+
+{%block style%}<link href="../style.css" rel="stylesheet">{% endblock %}
+{%  block title %}{%  endblock %}
+{% block body %}
+    <div class="adminTable">
+        <nav class="navAdmin">
+            <a href="index.php?p=home">Accueil</a>
+            <a href="magasines/addMag.php">Ajouter</a>
+        </nav>
+        <h1 style="text-align: center">Liste des magasines</h1>
+        <table>
+            <thead>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Image</th>
+            <th>Zones</th>
+            <th></th>
+            <th></th>
+            </thead>
+            {% for mag in listeMag %}
+                <tr>
+                    <td><p>  {{ mag.id }}  </p></td>
+                    <td><p>   {{ mag.titre }}   </p></td>
+                    <td><p>   {{ mag.img }}   </p></td>
+                    <td><p>   {{ mag.zones }}   </p></td>
+                    <td><p><a href="magasines/updateMag.php?id={{ mag.id }}">Modifier</a></p></td>
+                    <td><p><a href="magasines/deleteMag.php?id={{ mag.id }}">Supprimer</a></p></td>
+                </tr>
+            {% endfor %}
+            <?php } ?>
+        </table>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "Layout.twig" %}
+
+
+
+{% block body %}
+    <main class="accueil">
+        <div class="visuel">
+            <h3>Toute l'actualité de l'architecture et de la construction</h3>
+        </div>
+        <div class="content">
+            <div class="article clearfix">
+                <div class="profondeur">
+                    <img src="../assets/images/img-content/index/magazine.jpg">
+                    <div class="fond"></div>
+                </div>
+                <div class="wrapper-description">
+                    <div class="description">
+                        <div class="content-title test">
+                            <h2 class="actu-title test2">Magazine</h2>
+                        </div>
+                        <p>Voyagez, en découvrant chaque mois l’architecture et les constructions d’une région.</p>
+                        <p><a href="index.php?p=listmag">Les revues</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="article clearfix">
+                <div class="profondeur newsletter">
+                    <img src="../assets/images/img-content/index/newsletter.jpg">
+                    <div class="fond newsletter"></div>
+                </div>
+                <div class="wrapper-description">
+                    <div class="description newsletter">
+                        <div class="content-title test">
+                            <h2 class="actu-title test2">Newsletter</h2>
+                        </div>
+                        <p>Ne manquer rien de l’actualité, recever toutes nos news directement dans votre voite mail !</p>
+                        <p><a href="index.php?p=listmag">Les revues</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="abonnement">
+            <img src="../assets/images/img-content/index/abonnement.jpg">
+            <div class="description">
+                <div class="content-title test">
+                    <h2 class="actu-title test2">Faites nous confiance</h2>
+                </div>
+                <p><a href="index.php?p=listmag">S'abonner</a></p>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}
+
+{% block javascript %}
+    <script src="../assets/js/app.js"></script>
+    <script>
+        var picto = document.querySelector('.picto_search img');
+        var form = document.querySelector('.search_bar input');
+
+        picto.addEventListener('click', function () {
+
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                form.style.transition = '0.5s!important';
+
+            } else {
+                form.style.display = 'none';
+                form.style.transition = '0.5s!important';
+
+            }
+
+            window.onclick = function(event) {
+                if (!event.target.matches('#livesearch')) {
+                    console.log('yay');
+
+                    document.getElementById("livesearch").style.display = 'none';
+
+
+                }
+            }
+
+        });
+    </script>
+
+{% endblock %}
+

@@ -1,0 +1,157 @@
+{% extends "Layout.twig" %}
+
+
+{% block body %}
+        <main>
+         
+         <div class="presentation">
+             <img src="../assets/images/img-layout/pexels-foto.jpg" alt="photo" class="accroche">
+            
+            <div class="couv_mag">
+              <div class="desc">
+               <div class="titre">
+                <h3>Ce mois-ci</h3>
+                <hr>
+               </div>
+                 <p>Découvrez l'architecture des <b>Maldives</b></p>
+              </div>
+              <figure>
+                    <img src="../assets/images/img-layout/couv_285.jpg" alt="couverture">
+                </figure>
+          </div>
+         </div>
+          
+            
+          <div class="one">
+              <h1>TOUTES NOS REVUES</h1>
+              <img src="../assets/images/img-layout/3_point.svg" alt="crazy_frog" />
+              <img src="../assets/images/img-layout/plus.svg" alt="plus" />
+          </div>
+           
+           
+           
+           <div class="filter">
+               <div class="col1">
+                   <span class="cent"><h2>métropole</h2></span>
+                   <a href="#">Alsace</a>
+                   <a href="#">Aquitaine</a>
+                   <a href="#">Auvergne</a>
+                   <a href="#">Bourgogne</a>
+                   <a href="#">Bretagne</a>
+                   <a href="#">Centre</a>
+                   <a href="#">Champagne-Ardenne</a>
+                   <a href="#">Corse</a>
+                   <a href="#">Franche-Comté</a>
+                   <a href="#">Ile de France</a>
+                   <a href="#">Ile de France</a>
+                   <a href="#">Languedoc-Roussillon</a>
+                   <a href="#">Limousin</a>
+                   <a href="#">Lorraine</a>
+                   <a href="#">Nord Pas de Calais</a>
+                   <a href="#">Normandie</a>
+                   <a href="#">Pays de la Loire</a>
+                   <a href="#">Picardie</a>
+                   <a href="#">Poitou Charentes</a>
+                   <a href="#">Provence Alpes Côte d'Azur</a>
+                   <a href="#">Rhône Alpes</a>
+               </div>
+               
+               <div class="col2">
+                  <span class="cent"><h2>outre-mer</h2></span>
+                   <a href="#">Guadeloupe</a>
+                   <a href="#">Guyane</a>
+                   <a href="#">Martinique</a>
+                   <a href="#">Réunion</a>
+                   <a href="#">Mayotte</a>
+                   <a href="#">Saint Barthélemy</a>
+                   <a href="#">Saint Martin</a>
+               </div>
+               
+               <div class="col3">
+                   <span class="cent"><h2>étranger</h2></span>
+                   <a href="#">Belgique / België</a>
+                   <a href="#">Suisse</a>
+               </div>
+               
+           </div>
+           
+           
+           
+           
+           
+           
+            <section>
+
+                {% for mag in listmag %}
+                <article>
+                   <figure>
+                    <img src="../assets/images/img-layout/imagess.png" alt="image">
+                    <figcaption>{{ mag.titre }}</figcaption>
+                   </figure>
+                   <div class="description">
+                       <div class="titre">
+                        <h2>{{ mag.zones }} {{ mag.part_id }}</h2>
+                        <hr>
+                        <img src="../assets/images/img-layout/visibility.svg" alt="visible" class="visible">
+                        </div>
+                        <div class="command">
+                        <a href="index.php?p=details&mag_id={{ mag.part_id }}">Commander</a>
+                        <span>- 1 +</span>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </section> 
+
+            <span class="page"><img src="../assets/images/img-layout/chevron1.svg" alt="chevron">Pages 2 sur 38<img src="../assets/images/img-layout/Triangle.svg" alt="triangle"><img src="../assets/images/img-layout/chevron2.svg" alt="chevron"></span>
+        </main>
+
+        
+{% endblock %}
+
+
+{% block javascript %}
+    <script src="../assets/js/app.js"></script>
+    <script>
+        var picto = document.querySelector('.picto_search img');
+        var form = document.querySelector('.search_bar input');
+
+        picto.addEventListener('click', function () {
+
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                form.style.transition = '0.5s!important';
+
+            } else {
+                form.style.display = 'none';
+                form.style.transition = '0.5s!important';
+
+            }
+
+            window.onclick = function(event) {
+                if (!event.target.matches('#livesearch')) {
+                    console.log('yay');
+
+                    document.getElementById("livesearch").style.display = 'none';
+
+
+                }
+            }
+
+        });
+        var fil = document.querySelector('.filter');
+        var ppp = document.querySelector('.one img:nth-child(2)');
+        var croix = document.querySelector('.one img:nth-child(3)');
+
+        ppp.addEventListener('click', function(){
+            if(fil.style.display === 'flex'){
+                fil.style.display = '';
+
+            }else{
+                fil.style.display = 'flex';
+                fil.style.transition = "all 2s";
+            }
+        });
+    </script>
+
+{% endblock %}

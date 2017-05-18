@@ -1,0 +1,42 @@
+{% extends "Layout.twig" %}
+
+
+{%block style%}<link href="../style.css" rel="stylesheet">{% endblock %}
+{%  block title %}{%  endblock %}
+{% block body %}
+
+    <div class="adminTable">
+        <nav class="navAdmin">
+            <a href="index.php?p=home">Accueil</a>
+            <a href="newsletter/addNews.php">Ajouter</a>
+        </nav>
+        <h1 style="text-align: center">Liste des newsletter</h1>
+        <table>
+            <thead>
+            <th>Id</th>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Mail</th>
+            <th>Telephone</th>
+            <th>Service</th>
+            <th></th>
+            <th></th>
+            </thead>
+            {% for new in listeNews %}
+                <tr>
+                    <td><p>  {{ new.id }}  </p></td>
+                    <td><p>   {{ new.prenom }}   </p></td>
+                    <td><p>   {{ new.nom }}   </p></td>
+                    <td><p>   {{ new.mail }}   </p></td>
+                    <td><p>   {{ new.telephone }}   </p></td>
+                    <td><p>   {{ new.service }}   </p></td>
+
+                    <td><p><a href="newsletter/updateNews.php?id={{ new.id }}">Modifier</a></p></td>
+                    <td><p><a href="newsletter/deleteNews.php?id={{ new.id }}">Supprimer</a></p></td>
+                </tr>
+            {% endfor %}
+            <?php } ?>
+        </table>
+
+    </div>
+{% endblock %}

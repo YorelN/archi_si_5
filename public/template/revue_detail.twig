@@ -1,0 +1,85 @@
+{% extends "Layout.twig" %}
+
+{% block body %}
+    <main>
+    <section>
+
+    {% for detail in details %}
+        <article>
+
+            <div class="fond"></div>
+                <figure>
+                    <img src="../assets/images/img-layout/imagess.png" alt="image">
+                </figure>
+                <div class="etiquette">
+                    <h1>{{ detail.titre }}</h1>
+                    <h2>{{ detail.id }}</h2>
+                    <hr>
+                    <p>Maui helicopter tours are a great way to see the island from a different perspective and have a fun adventure.</p>
+
+                    <div class="achat">
+                        <span>19€</span>
+                        <a href="#">Commander</a>
+                        <span>- 1 +</span>
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+        </section>
+
+        {% block javascript %}
+            <script src="../assets/js/app.js"></script>
+            <script>
+                var picto = document.querySelector('.picto_search img');
+                var form = document.querySelector('.search_bar input');
+
+                picto.addEventListener('click', function () {
+
+                    if (form.style.display === 'none') {
+                        form.style.display = 'block';
+                        form.style.transition = '0.5s!important';
+
+                    } else {
+                        form.style.display = 'none';
+                        form.style.transition = '0.5s!important';
+
+                    }
+
+                    window.onclick = function(event) {
+                        if (!event.target.matches('#livesearch')) {
+                            console.log('yay');
+
+                            document.getElementById("livesearch").style.display = 'none';
+
+
+                        }
+                    }
+
+                });
+            </script>
+
+        {% endblock %}
+
+
+        <h1>NOS PARTENAIRES</h1>
+        <section>
+
+    {% for partenaire in details %}
+
+        <article>
+                <div class="description">
+                    <div class="titre">
+                        <h2>{{ partenaire.secteur }}</h2>
+                        <hr>
+                    </div>
+                    <div class="command">
+                        <span>{{ partenaire.nom }} ({{ partenaire.codepostal }})</span>
+                        <span>{{ partenaire.zone }}</span>
+                        <span>MPI (77)</span>
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+        </section>
+    </main>
+{% endblock %}

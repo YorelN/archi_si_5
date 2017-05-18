@@ -1,0 +1,17 @@
+{
+    "name": "nicolasleroy/architecture_de_votre_region",
+    "authors": [
+        {
+            "name": "YorelN",
+            "email": "nicolas.leroy971@hetic.net"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crud\\": "Crud/"
+        }
+    }
+}
