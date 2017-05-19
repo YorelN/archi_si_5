@@ -32,7 +32,7 @@ if (isset($_POST) && count($_POST) > 0)
 }
 ?>
 
-<link rel="stylesheet" href="../assets/css/styleAdmin.css">
+<link rel="stylesheet" href="../assets/css/base.css">
 <body class="loginAdmin">
 <main>
     <div class="login">
