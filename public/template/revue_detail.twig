@@ -1,5 +1,8 @@
 {% extends "Layout.twig" %}
 
+{% block css %}
+    <link rel="stylesheet" href="../assets/css/styles.css">{% endblock %}
+
 {% block body %}
     <main>
     <section>
@@ -13,7 +16,7 @@
                 </figure>
                 <div class="etiquette">
                     <h1>{{ detail.titre }}</h1>
-                    <h2>{{ detail.id }}</h2>
+                    <h2>{{ detail.zones }}</h2>
                     <hr>
                     <p>Maui helicopter tours are a great way to see the island from a different perspective and have a fun adventure.</p>
 
@@ -61,7 +64,7 @@
         {% endblock %}
 
 
-        <h1>NOS PARTENAIRES</h1>
+        <h1 class="part">NOS PARTENAIRES</h1>
         <section>
 
     {% for partenaire in details %}
