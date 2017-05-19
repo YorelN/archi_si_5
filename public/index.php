@@ -108,6 +108,9 @@ switch ($page)
 	case 'apropos':
 		echo $twig->render('Apropos.twig');
 		break;
+	case 'offre':
+		echo $twig->render('offre.twig');
+		break;
 	default :
 		header('HTTP/1.0 404 Not Found');
 		echo $twig->render('404.twig');
