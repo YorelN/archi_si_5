@@ -2,7 +2,7 @@
 
 
 {% block body %}
-        <main>
+        <main class="revues">
          
          <div class="presentation">
              <img src="../assets/images/img-layout/pexels-foto.jpg" alt="photo" class="accroche">
@@ -30,52 +30,7 @@
            
            
            
-           <div class="filter">
-               <div class="col1">
-                   <span class="cent"><h2>métropole</h2></span>
-                   <a href="#">Alsace</a>
-                   <a href="#">Aquitaine</a>
-                   <a href="#">Auvergne</a>
-                   <a href="#">Bourgogne</a>
-                   <a href="#">Bretagne</a>
-                   <a href="#">Centre</a>
-                   <a href="#">Champagne-Ardenne</a>
-                   <a href="#">Corse</a>
-                   <a href="#">Franche-Comté</a>
-                   <a href="#">Ile de France</a>
-                   <a href="#">Ile de France</a>
-                   <a href="#">Languedoc-Roussillon</a>
-                   <a href="#">Limousin</a>
-                   <a href="#">Lorraine</a>
-                   <a href="#">Nord Pas de Calais</a>
-                   <a href="#">Normandie</a>
-                   <a href="#">Pays de la Loire</a>
-                   <a href="#">Picardie</a>
-                   <a href="#">Poitou Charentes</a>
-                   <a href="#">Provence Alpes Côte d'Azur</a>
-                   <a href="#">Rhône Alpes</a>
-               </div>
-               
-               <div class="col2">
-                  <span class="cent"><h2>outre-mer</h2></span>
-                   <a href="#">Guadeloupe</a>
-                   <a href="#">Guyane</a>
-                   <a href="#">Martinique</a>
-                   <a href="#">Réunion</a>
-                   <a href="#">Mayotte</a>
-                   <a href="#">Saint Barthélemy</a>
-                   <a href="#">Saint Martin</a>
-               </div>
-               
-               <div class="col3">
-                   <span class="cent"><h2>étranger</h2></span>
-                   <a href="#">Belgique / België</a>
-                   <a href="#">Suisse</a>
-               </div>
-               
-           </div>
-           
-           
+
            
            
            
@@ -83,23 +38,28 @@
             <section>
 
                 {% for mag in listmag %}
-                <article>
-                   <figure>
-                    <img src="../assets/images/img-layout/imagess.png" alt="image">
-                    <figcaption>{{ mag.titre }}</figcaption>
-                   </figure>
-                   <div class="description">
-                       <div class="titre">
-                        <h2>{{ mag.zones }} {{ mag.part_id }}</h2>
-                        <hr>
-                        <img src="../assets/images/img-layout/visibility.svg" alt="visible" class="visible">
+
+                    <article>
+                        <figure>
+                            <img src="../assets/images/img-layout/imagess.png" alt="image">
+                            <figcaption>{{ mag.titre }}</figcaption>
+                        </figure>
+                        <div class="description">
+                            <div class="titre">
+                                <div class="content-title">
+                                    <h2>{{ mag.zones }}</h2>
+                                    <div class="underline"></div>
+                                </div>
+                                <img src="../assets/images/img-layout/visibility.svg" alt="visible" class="visible">
+                            </div>
+
+                            <div class="command">
+                                <span>19€</span>
+                                <button><a href="index.php?p=details&mag_id={{ mag.part_id }}">Commander</a></button>
+                                <span>- 1 +</span>
+                            </div>
                         </div>
-                        <div class="command">
-                        <a href="index.php?p=details&mag_id={{ mag.part_id }}">Commander</a>
-                        <span>- 1 +</span>
-                        </div>
-                    </div>
-                </article>
+                    </article>
                 {% endfor %}
             </section> 
 

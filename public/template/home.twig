@@ -55,7 +55,7 @@
 {% block javascript %}
     <script src="../assets/js/app.js"></script>
     <script>
-        var picto = document.querySelector('.picto_search img');
+        var picto = document.querySelector('.picto_search');
         var form = document.querySelector('.search_bar input');
 
         picto.addEventListener('click', function () {
@@ -72,7 +72,6 @@
 
             window.onclick = function(event) {
                 if (!event.target.matches('#livesearch')) {
-                    console.log('yay');
 
                     document.getElementById("livesearch").style.display = 'none';
 

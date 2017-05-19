@@ -13,18 +13,18 @@
 <header class="clearfix">
     <div id="content-logo">
         <h1>
-            <a href="index.html.twig">
-                <img src="../img-layout/logo.png" alt="">
+            <a href="index.php?p=home">
+                <img src="../assets/images/img-layout/logo.png" alt="">
             </a>
         </h1>
         <div class="burger">
-            <img src="../img-layout/burger.png" alt="">
+            <img src="../assets/images/burger.png" alt="">
         </div>
         <nav class="burger-menu">
             <ul class="closed">
-                <li><a href="revues.html.twig">Revues</a></li>
-                <li><a href="actu.html.twig">Actualités</a></li>
-                <li><a href="a-propos.html.twig">À propos</a></li>
+                <li><a href="index.php?p=listmag">Revues</a></li>
+                <li><a href="index.php?p=actu">Actualités</a></li>
+                <li><a href="index.php?p=apropos">À propos</a></li>
                 <li><a href="#">S'ABONNER</a></li>
                 <li><a href="#">Mon compte</a></li>
             </ul>
@@ -33,20 +33,24 @@
     <div id="none">
         <nav>
             <ul>
-                <li><a href="#"><img src="../img-layout/picto_compte.png" class="picto-nav" alt=""></a></li>
-                <li><a href="#"><img src="../img-layout/picto_panier.png" class="picto-nav" alt=""></a></li>
-                <li><a href="#"><img src="../img-layout/picto_search.png" class="picto-nav" alt=""></a></li>
+                <form class="search_bar">
+                    <input type="text" size="30" onkeyup="showResult(this.value)">
+                    <div id="livesearch"></div>
+                </form>
+                <li><a href="#"><img src="../assets/images/img-layout/picto_compte.png" class="picto-nav" alt="pictogramme compte"></a></li>
+                <li><a href="#"><img src="../assets/images/img-layout/picto_panier.png" class="picto-nav" alt="pictogramme panier"></a></li>
+                <li><a href="#" class="picto_search"><img src="../assets/images/img-layout/picto_search.png" class="picto-nav" alt="pictogramme recherche"></a></li>
             </ul>
         </nav>
     </div>
     <div id="none">
         <nav>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Revues</a></li>
-                <li><a href="#">Actualités</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#"><span class="upper">S'abonner</span></a></li>
+                <li><a href="index.php?p=home">Accueil</a></li>
+                <li><a href="index.php?p=listmag">Revues</a></li>
+                <li><a href="index.php?p=actu">Actualités</a></li>
+                <li><a href="index.php?p=apropos">À propos</a></li>
+                <li><a href="index.php?p="><span class="upper">S'abonner</span></a></li>
             </ul>
         </nav>
     </div>
@@ -72,7 +76,7 @@
             <li><a href="#"><img src="../assets/images/img-layout/fb.png"></a></li>
             <li><a href="#"><img src="../assets/images/img-layout/insta.png"></a></li>
             <li><a href="#"><img src="../assets/images/img-layout/pinterest.png"></a></li>
-            <li><a href="#"><img src="../assets/images/img-layout/twitter.png"></a></li>
+            <li><a href="#" class="picto_search"><img src="../assets/images/img-layout/twitter.png"></a></li>
         </ul>
     </div>
     <div class="bas-de-page">
@@ -80,10 +84,23 @@
             <h5 class="archi"><a href="#">L'Architecture</a></h5>
         </div>
         <div>
-            <h5 class="legales"><a href="inde">Mentions légales</a></h5>
+            <h5 class="legales"><a href="index.php?p=mention">Mentions légales</a></h5>
         </div>
     </div>
 </footer>
-{% block javascript %}{% endblock %}
+{% block javascript %}
+
+    <script>
+
+        var burger_menu = document.querySelector('div.burger');
+        var ul = document.querySelector('ul.closed');
+
+        burger_menu.addEventListener('click', function(){
+            ul.classList.toggle('closed');
+        });
+
+    </script>
+
+{% endblock %}
 </body>
 </html>

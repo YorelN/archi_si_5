@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost:8889
--- Généré le :  Lun 15 Mai 2017 à 11:51
+-- Généré le :  Ven 19 Mai 2017 à 04:13
 -- Version du serveur :  5.5.42
 -- Version de PHP :  7.0.8
 
@@ -11,86 +11,45 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de données :  `larchitecture_de_votre_region`
+-- Base de données :  `yay`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `actualites`
+-- Structure de la table `magasine`
 --
 
-CREATE TABLE `actualites` (
+CREATE TABLE `magasine` (
   `id` int(11) NOT NULL,
   `titre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sous-tire` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `partenaire` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `article`
---
-
-CREATE TABLE `article` (
-  `id` int(11) NOT NULL,
-  `region` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zones` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prix` int(255) NOT NULL,
+  `alt` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `part_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Structure de la table `newsletter`
+-- Contenu de la table `magasine`
 --
 
-CREATE TABLE `newsletter` (
-  `id` int(11) NOT NULL,
-  `prenom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `telephone` int(20) NOT NULL,
-  `service` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` text COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `prenom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `adresse` text COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `magasine` (`id`, `titre`, `img`, `zones`, `prix`, `alt`, `part_id`) VALUES
+(14, 'n°280', '', 'Martinique', 19, 'image de la martinique', 14),
+(15, 'n°279', '', 'Île de france', 22, 'image de l''île de france', 15),
+(16, 'n°278', '', 'Bretagne , Normandie', 42, 'image de la bretagne , normandie', 16),
+(17, 'n°277', '', 'Guadeloupe', 17, 'image de la guadeloupe', 17),
+(18, 'n°276', '', 'Belgique', 20, 'image de la belgique', 18),
+(19, 'n°275', '', 'Suisse', 33, 'image de la suisse', 19);
 
 --
 -- Index pour les tables exportées
 --
 
 --
--- Index pour la table `actualites`
+-- Index pour la table `magasine`
 --
-ALTER TABLE `actualites`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `article`
---
-ALTER TABLE `article`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `user`
---
-ALTER TABLE `user`
+ALTER TABLE `magasine`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -98,17 +57,7 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT pour la table `actualites`
+-- AUTO_INCREMENT pour la table `magasine`
 --
-ALTER TABLE `actualites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `article`
---
-ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `magasine`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
