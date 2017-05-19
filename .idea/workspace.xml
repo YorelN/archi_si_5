@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81e8b55b-d163-4c5a-8c15-377e355e1139" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/Apropos.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/base2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/revue_detail.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/revue_filtre.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/screen_actualites.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/styleAdmin.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view/Layout.twig" afterPath="$PROJECT_DIR$/admin/view/Layout.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/base.css" afterPath="$PROJECT_DIR$/assets/css/base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/styles.css" afterPath="$PROJECT_DIR$/assets/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/Layout.twig" afterPath="$PROJECT_DIR$/public/template/Layout.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/home.twig" afterPath="$PROJECT_DIR$/public/template/home.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/revue_detail.twig" afterPath="$PROJECT_DIR$/public/template/revue_detail.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/revue_filtre.twig" afterPath="$PROJECT_DIR$/public/template/revue_filtre.twig" />
-    </list>
+    <list default="true" id="81e8b55b-d163-4c5a-8c15-377e355e1139" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
