@@ -2,7 +2,12 @@
 
 /*----------------  RESET -----------------*/
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,feldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,
+strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,feldset,form,label,
+legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
+embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,
+time,mark,audio,video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -208,65 +213,66 @@ header div:nth-of-type(3) ul li:nth-child(even){
     text-transform: uppercase;
 }
 
-/* FOOTER */
+/* ----- FOOTER ----- */
 
+/* General */
 footer {
     background: black;
-}
-
-footer div {
-    width: 33.333%;
-    float: left;
-    background: black;
-    margin: 7% 0;
-}
-
-footer div h4 {
     color: white;
-    text-align: center;
-    margin-bottom: 1%;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: Gotham-Medium;
+    font-family: Gotham-Light;
 }
+    footer a {
+        color: white;
+        text-decoration: underline;
+    }
 
-footer div p {
-    line-height: 150%;
-    color: white;
-    text-align: center;
+/* global infos */
+
+footer .info {
+   width: 80%;
+   margin: 4% auto 7% auto;
+   text-align: center;
+   line-height: 150%;
 }
+    .info div {
+        width: 33%;
+        float: left;
+    }
+        footer h4 {
+            margin-bottom: 1%;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            /*line-height: 150%;*/
+        }
+        footer .line {
+            width: 15%;
+            display: block;
+            float: none;
+            margin: 0 auto;
+            border: 1.5px solid white;           
+        }
+        footer div+p {
+            margin-top: 15%;
+        }
+        .info div:last-child li {
+            display: inline-block;
+            margin: 16% 6% 0px 0px;
+        }
+            .info div:last-child li:last-child {
+                margin: 0;
+            }
+        footer h5 {
+            margin-bottom: 2%;
+        }
+            footer .archi {
+                float: left;
+                margin-left: 10%;
+            }
+            footer .legales {
+                float: right;
+                margin-right: 10%;
+            }
 
-footer a {
-    color: white;
-}
-
-footer p a {
-    text-decoration: underline;
-}
-
-footer div ul {
-    text-align: center;
-}
-
-footer div ul li {
-    display: inline-block;
-    margin: 0 1%;
-}
-
-footer.col50 {
-    width: 44%;
-    color: white;
-    margin: 2.5% 3%;
-}
-
-
-h5 a {
-    font-weight: lighter;
-}
-
-.legales {
-    text-align: right;
-}
 
 /* PAGE ACCUEIL */
 
@@ -333,7 +339,6 @@ h5 a {
     left: 50%;
     transform: translate(-100%, -50%);
     z-index:3;
-    zwidth: 500px;
     background: #fff;
 }
 
@@ -703,6 +708,7 @@ div.entreprise, div.equipe{
     margin: 40px auto;
 
 }
+
 /* PAGE REVUES */
 
 .revues .presentation{
@@ -933,67 +939,12 @@ div.entreprise, div.equipe{
 
 
 
+
+
 /* ______________________________ RESPONSIV ______________________________*/
 
 @media screen and (min-width: 600px) and (max-width: 900px){
 
-
-    /* actu */
-
-    .actu section {
-        width: 85%;
-        margin: 0 auto;
-    }
-
-    .actu div.text {
-        width: 100%;
-        height: auto;
-        padding: 0 0 0 0;
-    }
-
-    div.imagery {
-        margin-top: 30px;
-        position: relative;
-        width: 100%;
-    }
-    .actu .underground-img {
-        display: none;
-    }
-
-    a.button-more {
-        margin-top: 10px;
-    }
-
-
-    /* home */
-
-    .accueil .description {
-        padding: 2%;
-        font-size: 15px;
-    }
-
-    .accueil .abonnement .description {
-        bottom: -75px;
-    }
-
-    footer div {
-        width: 100%;
-    }
-
-    footer div h4 {
-        margin-bottom: 2%;
-    }
-
-    footer .col50 {
-        vertical-align: bottom;
-        width: 44%;
-        color: white;
-        margin: 2.5% 3%;
-    }
-
-    footer div {
-        margin: 3% 0;
-    }
     /* PAGE REVUES */
 
     .revues .presentation{
@@ -1033,35 +984,77 @@ div.entreprise, div.equipe{
 
     .revues .description span{
         font-size: .7em
+}
+
+    /* actu */
+
+    .actu section {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .actu div.text {
+        width: 100%;
+        height: auto;
+        padding: 0 0 0 0;
+    }
+
+    div.imagery {
+        margin-top: 30px;
+        position: relative;
+        width: 100%;
+    }
+    .actu .underground-img {
+        display: none;
+    }
+
+    a.button-more {
+        margin-top: 10px;
     }
 
 
+    /* home */
+
+    .accueil .description {
+        padding: 2%;
+        font-size: 15px;
+    }
+
+    .accueil .abonnement .description {
+        bottom: -75px;
+    }
+
+    footer .info {
+        width: 100%;
+    }
 }
 
 
-
-@media screen and (min-width: 375px) and (max-width: 600px){
+@media screen and (max-width: 600px){
 
     /* footer */
-    footer div {
-        font-size: 14px;
+
+    footer .info {
         width: 100%;
+        overflow: auto;
+        /*margin: 5% auto;*/
     }
-
-    footer div h4 {
-        margin-bottom: 2%;
-    }
-
-    footer .col50 {
-        vertical-align: bottom;
-        width: 44%;
-        color: white;
-        margin: 2.5% 3%;
-    }
-
-    footer div {
-        margin: 3% 0;
-    }
+        footer .info div {
+            width: 50%;
+            float: none;
+            margin: 8% auto;
+        }
+            footer .info div:last-child {
+                margin: 8% auto;
+                width: 100%;
+            }
+            footer ul {
+                margin-top: 0px;
+            }
+        footer div+p {
+            margin: 0;
+        }
+    /* end footer */
 
     #content-logo {
         display: block;
@@ -1138,6 +1131,7 @@ div.entreprise, div.equipe{
     .accueil .content .article .profondeur.newsletter {
         width: 100%;
         margin-left: 0;
+        background: red;
     }
 
     h2.actu-title {
@@ -1148,9 +1142,49 @@ div.entreprise, div.equipe{
         text-align: center;
     }
 
-    .description .content-title h2.actu-title {
+    .description .content-title h2.actu-title,
+    .description .content-title {
         width: 100%;
         text-align: center;
+    }
+   
+    .accueil .content .article:first-child {
+        margin: 0;
+    }
+
+   .accueil .content .article .wrapper-description .description {
+        width: 75%;
+        left: 88%;
+        top: 95%;
+   }
+    
+    h2.actu-title.test2:after {
+        content: "";
+        width: 50px;
+        height: 3px;
+        position: absolute;
+        left: 28%;
+        top: 190%;
+        background-color: #32D8F8;
+    }
+    
+    h2.actu-title.test2:last-child:after {
+        content: "";
+        width: 50px;
+        height: 3px;
+        position: absolute;
+        left: 41%;
+        top: 190%;
+        background-color: #32D8F8;
+    }
+
+
+
+    div.content-title.test+p {
+        width: 75%;
+        margin: 30px auto 0 auto;
+        text-align: center;
+        line-height: 150%;
     }
 
     /* ACTU */
@@ -1214,7 +1248,8 @@ div.entreprise, div.equipe{
     .equipe_entreprise ol {
         padding-right:0%;
     }
-    /* page des revues */
+
+/* page des revues */
 
 
     .revues .presentation{
@@ -1254,62 +1289,169 @@ div.entreprise, div.equipe{
     .revues section article figure figcaption {
         margin-top: -18px;
 
-    }
-
-
-
+    }   
 
 
 
 }
 
 
+/* ------ tableau avec tous les festivals
+-----------------------------------------*/
 
+.adminTable {
+    width: 80%;
+    margin: 0 auto;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.bas-de-page {
+.adminTable table {
     width: 100%;
 }
 
-.bas-de-page .legales {
-    float: right;
+.adminTable th {
+    box-sizing: border-box;
+    padding: 1em;
+    background: #aaa;
 }
 
-.bas-de-page div {
-    width: 50%;
+.adminTable td {
+    background: #ccc;
+    box-sizing: border-box;
+    padding: 0.3em;
+    text-align: center;
+}
+
+.adminTable td a {
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.adminTable a:visited {
+    color: black;
+}
+
+.adminTable a {
+    color: black;
+    text-decoration: none;
 
 }
 
-.bas-de-page .archi {
-    float: left;
+.navAdmin {
+    width: 17%;
+    margin: 0 auto;
 }
 
-.bas-de-page h5 {
-    display: inline-block;
+.navAdmin a {
+    padding: 3% 4%;
+    font-size: 1.3rem;
+}
+.loginAdmin {
+    background: #dadada;
 }
 
+.login {
+    margin: 20vh auto;
+    width: 50vh;
+}
+.login-screen {
+    background-color: #FFF;
+}
 
+.app-title {
+    text-align: center;
+    color: #777;
+}
 
+.login-form {
+    text-align: center;
+    margin: 5% auto;
+}
+.control-group {
+    margin: 4% 1%;
+}
 
+input {
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 5% 0;
+    margin: 3% 0;
+    width: 230px;
+    transition: border .5s;
+}
 
+input:focus {
+    box-shadow: none;
+    border: none;
+    box-decoration-break: clone;
+}
 
+.green_btn {
+    border: 2px solid transparent;
+    font-family: 'Dosis', sans-serif;
+    background: #6AC662;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 7% auto;
+    border-radius: 0;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 400;
+}
 
+.red_btn {
+    border: 2px solid transparent;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    background: #ee0000;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+    border-radius: 33px;
+}
+
+.blue_btn {
+    border: 2px solid transparent;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    background: #1490ff;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 100%;
+}
+
+/* ----- ----- */
 
 #livesearch {
     width: 100%;
@@ -1322,7 +1464,7 @@ div.entreprise, div.equipe{
 }
 
 
-.picto_search,.link_search_bar,.search_bar, .search_bar input, #livesearch {
+.picto_search {
     transition: 0.5s;
 }
 
@@ -1331,8 +1473,7 @@ div.entreprise, div.equipe{
     border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
     height: 20px !important;
     font-family: Gotham-Light, sans-serif;
-    text-align: left;
-    margin: 5% 6%;
+    margin: 3% 6%;
     text-decoration: none;
     color: lightgrey;
 }
@@ -1341,8 +1482,7 @@ div.entreprise, div.equipe{
     margin: 0.5% 3% 0 3%;
 }
 .search_bar input {
-    height: 25px;
-    margin-top: -4%;
+    height: 20px;
     border-radius: 3px;
     display: none;
     transition: 0.5s;
